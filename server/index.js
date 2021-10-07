@@ -5,7 +5,14 @@ import cookieParser from 'cookie-parser';
 
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js'
-dotenv.config({ path: '.env'});
+
+// ... other imports 
+import  path from 'path';
+
+// ... other app.use middleware 
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+
 
 import routes from './routes/routes.js'
 
@@ -42,4 +49,14 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+
+
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
+
+dotenv.config({ path: '.env'});
