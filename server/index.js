@@ -10,6 +10,8 @@ import { connectDB } from './config/db.js'
 import  path from 'path';
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
+dotenv.config({ path: '.env'});
+
 const app = express();
 
 app.use(express.urlencoded({
@@ -45,7 +47,7 @@ connectDB();
 //     console.log(`Mongo DB connected`);
 //   });
 
-dotenv.config({ path: '.env'});
+
 
 
 

@@ -32,7 +32,13 @@ function Auth() {
       
       axios.post('https://little-a-app.herokuapp.com/create', newUser);
 
+      clear();
+
   };
+
+  const clear = () => {
+    setInput({ email: '', name: '', password: '' });
+  }
 
   return (
     <div>
