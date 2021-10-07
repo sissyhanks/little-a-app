@@ -10,6 +10,8 @@ import { connectDB } from './config/db.js'
 import  path from 'path';
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
+const app = express();
+
 app.use(express.urlencoded({
   limit: "30mb",
   extended: true
@@ -45,7 +47,7 @@ connectDB();
 
 dotenv.config({ path: '.env'});
 
-const app = express();
+
 
 app.use(cors());
 app.use('/', routes);
