@@ -67,5 +67,5 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
-app.listen(PORT, console.log(`Server running on port ${PORT}`));
+app.listen(process.env.PORT, console.log(`Server running on port ${PORT}`));
 
