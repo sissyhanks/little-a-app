@@ -2,9 +2,9 @@
   "name": "little-a-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index/server.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node index/server.js",
+    "start": "node server/index.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
