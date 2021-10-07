@@ -30,7 +30,7 @@ function Auth() {
         password: input.password
       }
       
-      axios.post('http://localhost:3001/create', newUser);
+      axios.post('https://little-a-app.herokuapp.com/create', newUser);
 
   };
 
