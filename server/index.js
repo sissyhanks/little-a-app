@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { connectDB } from './config/db.js'
 
-import("./models/user");
+// import User from './models/user';
 
 connectDB();
 
@@ -52,7 +52,7 @@ app.use(cors());
 app.use('/', routes);
 
 app.get('/', (req, res) => {
-  res.send('hi i will be your pharm-assist today');
+  res.send('developers can make test apps ... as a treat');
 });
 
 const PORT = process.env.PORT || 5000;
